@@ -1,4 +1,6 @@
 import Foundation
+import Combine
+import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestore
 import GoogleSignIn
@@ -6,6 +8,7 @@ import GoogleSignIn
 class AuthManager: ObservableObject {
     @Published var user: User?
     @Published var isAuthenticated = false
+    weak var partnerManager: PartnerManager?
     
     init() {
         self.user = Auth.auth().currentUser
@@ -49,6 +52,7 @@ class AuthManager: ObservableObject {
                     
                     if let user = authResult?.user {
                         self?.saveUserToFirestore(user: user)
+                        self?.partnerManager?.acceptPendingInviteIfNeeded(userId: user.uid, email: user.email ?? "") { }
                     }
                 }
             }

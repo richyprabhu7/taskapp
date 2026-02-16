@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 import FirebaseCore
 import GoogleSignIn
 
@@ -12,6 +13,7 @@ struct TaskAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .background(Color(.systemBackground))
         }
     }
 }
