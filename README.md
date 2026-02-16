@@ -1,6 +1,6 @@
 # Task App
 
-A couples-focused task manager for iOS built with SwiftUI. Share tasks with your partner, organise by date and category, and earn points for getting things done.
+A couples-focused task manager: **iOS app** (SwiftUI) and **web app** (React + Vite). Share tasks with your partner, organise by date and category, and earn points for getting things done. Both apps use the same Firebase project and share data.
 
 ## Features
 
@@ -16,9 +16,8 @@ A couples-focused task manager for iOS built with SwiftUI. Share tasks with your
 
 ## Tech stack
 
-- **SwiftUI** — UI
-- **Firebase** — Auth, Firestore
-- **Google Sign-In (iOS)** — Sign-in with Google
+- **iOS**: SwiftUI, Firebase (Auth + Firestore), Google Sign-In
+- **Web**: React 18, TypeScript, Vite, Tailwind CSS, Firebase (Auth + Firestore)
 
 ## Requirements
 
@@ -53,14 +52,10 @@ A couples-focused task manager for iOS built with SwiftUI. Share tasks with your
 
 ## Project structure
 
-- **App** — `taskappApp.swift`, `ContentView.swift`
-- **Auth** — `AuthManager.swift`, `LoginView.swift`
-- **Partner** — `PartnerManager.swift`, `PartnerView.swift`, `PartnerInvite.swift`
-- **Tasks** — `Task.swift`, `TaskManager.swift`, `AddTaskView.swift`, `CreateTaskListView.swift`, `TaskRowView`, `TaskFilters.swift`
-- **Categories** — `Category.swift`, `CategoriesManager.swift`, `CategoriesListViewModel.swift`
-- **Calendar** — `CalendarTasksView.swift`
-- **Points** — `PointsManager.swift`
-- **Notifications** — `NotificationManager.swift`
+- **taskapp/** — iOS app (SwiftUI)
+  - App, Auth, Partner, Tasks, Categories, Calendar, Points, Notifications (see source files)
+- **taskapp-web/** — Web app (React + Vite)
+  - See [taskapp-web/README.md](taskapp-web/README.md) for setup and run instructions (`npm install`, `npm run dev`).
 
 ## License
 

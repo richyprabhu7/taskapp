@@ -1,6 +1,6 @@
 # Task App (Web)
 
-Web version of the **couples task manager** — same Firebase backend as the iOS app. Sign in with Google, invite your partner by email, manage tasks with due dates and categories, and track points.
+Web version of the **couples task manager** — same Firebase backend as the iOS app. Sign in with Google, invite your partner by email, manage tasks with due dates and categories, and track points. Data is shared with the iOS app when both use the same Firebase project.
 
 ## Features
 
@@ -22,21 +22,18 @@ Web version of the **couples task manager** — same Firebase backend as the iOS
 
 ## Setup
 
-1. **Clone or copy this folder** (e.g. into a new repo):
+1. **From the repo root** (or wherever `taskapp-web` lives):
    ```bash
-   # If you want a separate repo: copy taskapp-web out, then:
    cd taskapp-web
-   git init
-   git remote add origin https://github.com/YOUR_USERNAME/taskapp-web.git
    ```
 
 2. **Firebase**: Use the **same** Firebase project as your iOS app. In [Firebase Console](https://console.firebase.google.com/) → Project settings → Your apps → **Add app** → Web (</>). Copy the `firebaseConfig` values.
 
-3. **Env**:
+3. **Environment**:
    ```bash
    cp .env.example .env
    ```
-   Fill `.env` with your web app config:
+   Fill `.env` with your **web app** config (variable names must start with `VITE_`):
    ```env
    VITE_FIREBASE_API_KEY=...
    VITE_FIREBASE_AUTH_DOMAIN=...
@@ -45,30 +42,39 @@ Web version of the **couples task manager** — same Firebase backend as the iOS
    VITE_FIREBASE_MESSAGING_SENDER_ID=...
    VITE_FIREBASE_APP_ID=...
    ```
+   No spaces around `=`, no quotes unless the value contains spaces.
 
 4. **Install and run**:
    ```bash
    npm install
    npm run dev
    ```
-   Open the URL shown (e.g. http://localhost:5173).
+   Open the URL shown (e.g. http://localhost:5173). Restart the dev server after changing `.env`.
 
-5. **Auth domain**: In Firebase Console → Authentication → Sign-in method → Authorized domains, add `localhost` (and your production domain when you deploy).
+5. **Authorized domains**: Firebase Console → Authentication → Settings → **Authorized domains** → add `localhost` (and your production domain when you deploy). Without this, Google Sign-In will fail.
 
-## Separate GitHub repo
+## Scripts
 
-This app is meant to live in its **own repo** and folder:
+| Command        | Description              |
+|----------------|--------------------------|
+| `npm run dev`  | Start dev server         |
+| `npm run build`| Production build to `dist/` |
+| `npm run preview` | Serve the production build locally |
 
-- **Folder**: Keep `taskapp-web` as a standalone project (e.g. `~/Documents/taskapp-web`).
-- **Git**: From inside `taskapp-web`, run:
+## Separate repo (optional)
+
+You can keep `taskapp-web` in this repo (monorepo) or move it to its own repo:
+
+- **Same repo**: It lives under `taskapp-web/` here; no extra steps.
+- **New repo**: Copy the `taskapp-web` folder elsewhere, then:
   ```bash
+  cd taskapp-web
   git init
   git add .
   git commit -m "Initial web app"
   git remote add origin https://github.com/YOUR_USERNAME/taskapp-web.git
   git push -u origin main
   ```
-- Use a **new** GitHub repo (e.g. `taskapp-web`); do not push this code into the same repo as the iOS app unless you want a monorepo.
 
 ## Project structure
 
