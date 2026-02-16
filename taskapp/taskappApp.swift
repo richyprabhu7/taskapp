@@ -1,14 +1,14 @@
-//
-//  taskappApp.swift
-//  taskapp
-//
-//  Created by Richard Prabhu on 2/16/26.
-//
-
 import SwiftUI
+import FirebaseCore
+import GoogleSignIn
 
 @main
-struct taskappApp: App {
+struct TaskAppApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

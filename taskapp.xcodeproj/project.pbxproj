@@ -6,13 +6,31 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D6F9A14F2F42ACD70061C701 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D6F9A14E2F42ACD70061C701 /* FirebaseAuth */; };
+		D6F9A1512F42ACD70061C701 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D6F9A1502F42ACD70061C701 /* FirebaseFirestore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		D6F9A13D2F42AA0E0061C701 /* taskapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taskapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D6F9A1552F42AD7C0061C701 /* Exceptions for "taskapp" folder in "taskapp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = D6F9A13C2F42AA0E0061C701 /* taskapp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D6F9A13F2F42AA0E0061C701 /* taskapp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D6F9A1552F42AD7C0061C701 /* Exceptions for "taskapp" folder in "taskapp" target */,
+			);
 			path = taskapp;
 			sourceTree = "<group>";
 		};
@@ -23,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6F9A14F2F42ACD70061C701 /* FirebaseAuth in Frameworks */,
+				D6F9A1512F42ACD70061C701 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +85,8 @@
 			);
 			name = taskapp;
 			packageProductDependencies = (
+				D6F9A14E2F42ACD70061C701 /* FirebaseAuth */,
+				D6F9A1502F42ACD70061C701 /* FirebaseFirestore */,
 			);
 			productName = taskapp;
 			productReference = D6F9A13D2F42AA0E0061C701 /* taskapp.app */;
@@ -94,6 +116,9 @@
 			);
 			mainGroup = D6F9A1342F42AA0E0061C701;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D6F9A14D2F42ACD70061C701 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D6F9A13E2F42AA0E0061C701 /* Products */;
 			projectDirPath = "";
@@ -253,6 +278,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = taskapp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -284,6 +310,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = taskapp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -328,6 +355,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D6F9A14D2F42ACD70061C701 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D6F9A14E2F42ACD70061C701 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6F9A14D2F42ACD70061C701 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		D6F9A1502F42ACD70061C701 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6F9A14D2F42ACD70061C701 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D6F9A1352F42AA0E0061C701 /* Project object */;
 }

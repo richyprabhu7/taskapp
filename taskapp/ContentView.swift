@@ -1,24 +1,19 @@
-//
-//  ContentView.swift
-//  taskapp
-//
-//  Created by Richard Prabhu on 2/16/26.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var authManager = AuthManager()
+    @StateObject private var taskManager = TaskManager()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group {
+            if authManager.isAuthenticated {
+                TaskListView()
+                    .environmentObject(taskManager)
+                    .environmentObject(authManager)
+            } else {
+                LoginView()
+                    .environmentObject(authManager)
+            }
         }
-        .padding()
     }
-}
-
-#Preview {
-    ContentView()
 }
